@@ -12,7 +12,7 @@ const OuterContainer = styled.main`
 `;
 
 const InnerContainer = styled.div`
-    width: 80%;
+    width: 100%;
     height: 100%;
 
     display: flex;
@@ -25,21 +25,7 @@ const InnerContainer = styled.div`
     border-radius: 10px;
 `;
 
-const ToolsContainer = styled.div`
-    width: 100%;
-    height: 100%;
-
-    padding-top: 35px;
-    
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    flex-wrap: wrap;
-
-    gap: 40px;
-`;
-
 export {
     OuterContainer,
     InnerContainer,
-    ToolsContainer,
 }

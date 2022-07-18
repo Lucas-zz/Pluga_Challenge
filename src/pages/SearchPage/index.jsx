@@ -1,27 +1,24 @@
 import SearchBar from "../../components/SearchBar";
-import Tool from "../../components/Tool";
-import { OuterContainer, InnerContainer, ToolsContainer } from "./style";
+import { OuterContainer, InnerContainer } from "./style";
 import useTools from "../../hooks/api/useTools";
+import Pagination from "../../components/Pagination";
+import { useState } from "react";
 
 export default function SearchPage() {
+  const { toolLoading, tools } = useTools();
 
-  const { toolsLoading, tools } = useTools();
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <OuterContainer>
       <InnerContainer>
         <SearchBar />
-        <ToolsContainer>
-          {tools?.map(tool => (
-            <Tool
-              key={tool.app_id}
-              name={tool.name}
-              color={tool.color}
-              icon={tool.icon}
-              link={tool.link}
-            />
-          ))}
-        </ToolsContainer>
+        {toolLoading
+          ? <h1>Loading...</h1>
+          : <Pagination handleOpen={handleOpen} tools={tools} />
+        }
       </InnerContainer>
     </OuterContainer>
   );

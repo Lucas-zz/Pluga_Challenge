@@ -20,14 +20,15 @@ const ToolContainer = styled.div`
 
     padding: 10px;
 
-    will-change: transform;
-    transition: transform 250ms ease-in-out;
+    will-change: transition;
+    transition: transform 250ms;
 
     :hover {
         transition: transform 250ms;
         transform: translateX(-3px) translateY(-3px);
 
         box-shadow: 0 0 0 1px #27AAE1;
+        color: #27AAE1;
 
         cursor: pointer;
     }
