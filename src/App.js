@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import SearchPage from './pages/SearchPage';
 import { GlobalStyle } from './style/reset';
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<h1>Oi</h1>} />
+          <Route path="/" element={<SearchPage />} />
         </Routes>
       </BrowserRouter>
     </>
