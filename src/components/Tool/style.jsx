@@ -11,6 +11,8 @@ const ToolContainer = styled.div`
     align-items: center;
     align-self: center;
 
+    position: relative;
+
     background-color: #EAEAEA;
     box-shadow: 1.5px 1.5px 3px rgba(57, 63, 72, 0.3);
 
@@ -24,6 +26,10 @@ const ToolContainer = styled.div`
     :hover {
         transition: transform 250ms;
         transform: translateX(-3px) translateY(-3px);
+
+        box-shadow: 0 0 0 1px #27AAE1;
+
+        cursor: pointer;
     }
 `;
 
@@ -31,24 +37,43 @@ const CircularImage = styled.div`
     width: 90px;
     height: 90px;
 
-    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    background-color: #FFF;
+    background-color: ${props => props.color} !important;
+    border-radius: 50%;
+    
+    position: absolute;
+    top: 30px;
 `;
 
-const ToolName = styled.div`
+const Logo = styled.img`
+    width: 50%;
+    height: 50%;
+`
+
+const ToolName = styled.span`
+    width: 70%;
+
+    font-family: 'Roboto Condensed', sans-serif;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: #FFF;
+    text-align: center;
 
-    padding: 10px 30px;
+    background-color: inherit;
+    border-radius: 2px;
+
+    position: absolute;
+    bottom: 20px;
 `;
 
 export {
     ToolContainer,
     CircularImage,
     ToolName,
+    Logo
 }
