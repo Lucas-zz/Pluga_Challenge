@@ -10,6 +10,8 @@ export default function useTools() {
         act: getTools,
     } = useAsync(tollApi.getAllTools);
 
+    console.log("passei");
+
     return {
         tools,
         tollLoading,
