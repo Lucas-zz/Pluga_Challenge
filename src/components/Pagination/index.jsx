@@ -4,9 +4,9 @@ import Tool from "../Tool";
 import { PaginationContainer, ToolsContainer } from "./style";
 
 export default function Pagination({ tools }) {
+
     // We start with an empty list of items.
     const [currentItems, setCurrentItems] = useState(null);
-
     const [pageCount, setPageCount] = useState(0);
 
     // Here we use item offsets; we could also use page offsets
@@ -32,7 +32,7 @@ export default function Pagination({ tools }) {
         <>
             <ToolsContainer>
                 {currentItems &&
-                    currentItems?.map(tool => (
+                    currentItems.map(tool => (
                         <Tool
                             key={tool.app_id}
                             name={tool.name}
@@ -45,22 +45,11 @@ export default function Pagination({ tools }) {
             <PaginationContainer>
                 <ReactPaginate
                     nextLabel=">"
+                    previousLabel="<"
                     onPageChange={handlePageClick}
                     pageRangeDisplayed={3}
                     marginPagesDisplayed={2}
                     pageCount={pageCount}
-                    previousLabel="<"
-                    pageClassName="page-item"
-                    pageLinkClassName="page-link"
-                    previousClassName="page-item"
-                    previousLinkClassName="page-link"
-                    nextClassName="page-item"
-                    nextLinkClassName="page-link"
-                    breakLabel="..."
-                    breakClassName="page-item"
-                    breakLinkClassName="page-link"
-                    containerClassName="pagination"
-                    activeClassName="active"
                     renderOnZeroPageCount={null}
                 />
             </PaginationContainer>

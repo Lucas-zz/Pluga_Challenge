@@ -6,8 +6,7 @@ import { useState } from "react";
 
 export default function SearchPage() {
   const { toolLoading, tools } = useTools();
-
-  const [filteredTools, setFilteredTools] = useState();
+  const [filteredTools, setFilteredTools] = useState(null);
 
   function handleSearch(text) {
     const searchParams = text.toLowerCase();
@@ -19,7 +18,6 @@ export default function SearchPage() {
         return tool.app_id.includes(searchParams);
       }
     });
-
     setFilteredTools(filteredData);
   }
 

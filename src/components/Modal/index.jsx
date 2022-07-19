@@ -1,11 +1,15 @@
 import { Box, Modal } from '@mui/material';
-import { CircularImage, Logo, ToolName, CurrentTool, LastSeenTools, AccessToolPage, ToolContainer, style } from './style';
+import { useContext } from 'react';
+import LastSeenToolsContext from '../../contexts/lastSeenToolsContext';
+import { CircularImage, Logo, ToolName, CurrentTool, LastSeenTools, AccessToolPage, ToolContainer, ToolsList, ToolListing, style } from './style';
 
 export default function Modality({ ...props }) {
 
     function handleNavigation(url) {
-        window.open(url, '_blank');
+        window.open(url, '_blank').focus();
     }
+
+    const { lastSeenTools } = useContext(LastSeenToolsContext);
 
     return (
         <Modal
@@ -25,8 +29,19 @@ export default function Modality({ ...props }) {
                     </ToolContainer>
                 </CurrentTool>
                 <LastSeenTools>
-                    ÚLTIMAS FERRAMENTAS VISUALIZADAS
+                    <span>ÚLTIMAS FERRAMENTAS VISUALIZADAS</span>
+                    <ToolsList>
+                        {lastSeenTools?.map((tool) => (
+                            <ToolListing>
+                                <CircularImage smaller={true} color={tool?.color}>
+                                    <Logo smaller={true} src={tool?.icon} />
+                                </CircularImage>
+                                <ToolName smaller={true}>{tool?.name}</ToolName>
+                            </ToolListing>
+                        ))}
+                    </ToolsList>
                 </LastSeenTools>
+
             </Box>
         </Modal>
     );
