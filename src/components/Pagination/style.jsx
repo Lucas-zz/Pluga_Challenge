@@ -30,27 +30,33 @@ const PaginationContainer = styled.div`
         align-items: center;
 
         & > li {
-            margin: 2vw 1vw;
-            padding: 1vw;
-
-            box-shadow: 0 0 0 1px #27AAE1;
+            margin: 1vw;
+            margin-top: 50px;
             color: #333;
 
-            font-size: 18px;
-            border-radius: 10px;
-
-            will-change: transition;
-            transition: background 150ms;
-
-            cursor: pointer;
-
-            :hover {
-                background-color: #27AAE1;
-                transition: transform 250ms;
-            }
-
             & > a {
-                margin: 10px;
+                min-width: 100% !important;
+                min-height: 100% !important;
+
+                box-shadow: 0 0 0 1px #27AAE1;
+                
+                font-size: 18px;
+                border-radius: 5px;
+                padding: 15px;
+                
+                cursor: pointer;
+
+                will-change: transition;
+                transition: background 150ms;
+
+                :hover {
+                    background-color: #EAEAEA;
+                    transition: transform 250ms;
+                }
+
+                :active {
+                    background-color: #27AAE1;
+                }
             }
         }
     }
