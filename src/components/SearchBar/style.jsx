@@ -2,16 +2,18 @@ import styled from 'styled-components';
 
 const SearchContainer = styled.div`
     width: 100%;
-    height: 100px;
+    height: 60px;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+
+    padding-left: 50px;
 
     background-color: #EAEAEA;
 
     border: 1px solid #CECECE;
-    border-radius: 5px;
+    border-radius: 50px;
 `;
 
 export {
