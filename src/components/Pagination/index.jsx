@@ -3,7 +3,7 @@ import ReactPaginate from "react-paginate";
 import Tool from "../Tool";
 import { PaginationContainer, ToolsContainer } from "./style";
 
-export default function Pagination({ handleOpen, tools }) {
+export default function Pagination({ tools }) {
     // We start with an empty list of items.
     const [currentItems, setCurrentItems] = useState(null);
 
@@ -39,7 +39,6 @@ export default function Pagination({ handleOpen, tools }) {
                             color={tool.color}
                             icon={tool.icon}
                             link={tool.link}
-                            handleOpen={handleOpen}
                         />
                     ))}
             </ToolsContainer>
