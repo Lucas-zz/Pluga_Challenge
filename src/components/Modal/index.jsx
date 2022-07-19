@@ -32,7 +32,7 @@ export default function Modality({ ...props }) {
                     <span>ÚLTIMAS FERRAMENTAS VISUALIZADAS</span>
                     <ToolsList>
                         {lastSeenTools?.map((tool) => (
-                            <ToolListing>
+                            <ToolListing key={tool.name}>
                                 <CircularImage smaller={true} color={tool?.color}>
                                     <Logo smaller={true} src={tool?.icon} />
                                 </CircularImage>
