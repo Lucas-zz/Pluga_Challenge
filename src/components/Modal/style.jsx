@@ -5,7 +5,7 @@ const CurrentTool = styled.div`
     height: 100%;
 
     display: grid;
-    grid-template-columns: auto 20vw;
+    grid-template-columns: auto auto;
     justify-content: center;
     align-items: center;
 
@@ -32,11 +32,17 @@ const Logo = styled.img`
 `;
 
 const ToolName = styled.span`
-    font-family: 'Roboto Condensed', sans-serif;
+    width: 100%;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
     padding: 20px;
     padding-top: 0;
-    padding-left: 0;
+
+    font-family: 'Roboto Condensed', sans-serif;
 `;
 
 const LastSeenTools = styled.div`
@@ -49,11 +55,9 @@ const LastSeenTools = styled.div`
     align-items: space-evenly;
 `;
 
-const AccessToolPage = styled.button`
-    width: 100px;
-    height: 40px;
-    
+const AccessToolPage = styled.button`    
     border-radius: 20px;
+    padding: 10px 35px !important;
     
     background-color: #27AAE1;
     color: #FFF;
@@ -62,8 +66,12 @@ const AccessToolPage = styled.button`
 `;
 
 const ToolContainer = styled.div`
+    width: 250px;
+
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
+
+    padding: 0 50px;
 `;
 
 const style = {

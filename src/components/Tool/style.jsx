@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const ToolContainer = styled.div`
-    width: 15vw;
-    height: 20vh;
+    width: 70%;
+    height: 200px;
 
     display: flex;
     flex-direction: column;

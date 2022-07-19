@@ -5,12 +5,19 @@ const ToolsContainer = styled.div`
     height: 100%;
 
     padding-top: 35px;
+
+    position: relative;
     
     display: grid;
     grid-template-columns: auto auto auto auto;
     flex-wrap: wrap;
 
     gap: 40px;
+
+    @media (max-width: 978px) {
+        grid-template-columns: auto auto auto;
+        margin-bottom: 150px;
+    }
 `;
 
 const PaginationContainer = styled.div`
@@ -18,11 +25,15 @@ const PaginationContainer = styled.div`
     height: 30px;
 
     position: absolute;
-    bottom: 10vh;
+    bottom: 10%;
 
     font-family: 'Roboto Condensed', sans-serif;
 
     user-select: none;
+
+    @media (max-width: 968px) {
+        bottom: -15%;
+    }
 
     & > ul {
         display: flex;
